@@ -13,7 +13,6 @@ const DisplayCooperResult = ({
   const result = cooperCalculator(distance, gender, age);
 
   const propsPassed = distance && age ? true : false;
-
   return (
     <>
       {propsPassed && (
@@ -22,6 +21,7 @@ const DisplayCooperResult = ({
             {age} y/o {gender} running {distance} meters.
           </p>
           <p id="cooper-result">Result: {result}</p>
+
           {authenticated && !entrySaved ? (
             <button
               id="save-result"
@@ -29,9 +29,9 @@ const DisplayCooperResult = ({
             >
               Save entry
             </button>
-          ) : (
-            <p id="response-message">Your entry was saved</p>
-          )}
+          ): "" }
+          {authenticated && entrySaved ?
+          (<p id="response-message">Your entry was saved</p>) : ""}
         </>
       )}
     </>

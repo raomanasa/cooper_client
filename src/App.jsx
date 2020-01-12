@@ -13,6 +13,8 @@ class App extends Component {
     age: "",
     renderLoginForm: false,
     authenticated: false,
+    email:"",
+    password:"",
     message: "",
     entrySaved: false,
     renderIndex:false
@@ -51,13 +53,13 @@ class App extends Component {
             >
               Login
             </button>
-            <p>{message}</p>
+            <p id="message">{message}</p>
           </>
         );
         break;
       case authenticated:
         renderLogin = (
-          <p>Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}</p>
+          <p id="messagelogin">Hi {JSON.parse(sessionStorage.getItem("credentials")).uid}</p>
         );
         if (this.state.renderIndex) {
           performanceDataIndex = (
@@ -85,7 +87,7 @@ class App extends Component {
           distance={this.state.distance}
           gender={this.state.gender}
           age={this.state.age}
-          authenticated={this.state.authentication}
+          authenticated={this.state.authenticated}
           entrySaved={this.state.entrySaved}
           entryHandler={() =>this.setstate({ entrySaved: true, updateIndex:true})}
         />
