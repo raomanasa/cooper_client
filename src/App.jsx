@@ -74,11 +74,10 @@ class App extends Component {
         } else {
           performanceDataIndex = (
           <button id="show-index" onClick={() => this.setState({ renderIndex: true })}>Show past entries</button>
-        )
-          }
+          )
+        }
         break;
     }
-
     return (
       <>
         <InputFields onChangeHandler={this.onChangeHandler} />
@@ -89,7 +88,7 @@ class App extends Component {
           age={this.state.age}
           authenticated={this.state.authenticated}
           entrySaved={this.state.entrySaved}
-          entryHandler={() =>this.setstate({ entrySaved: true, updateIndex:true})}
+          entryHandler={() =>this.setState({ entrySaved: true, updateIndex:true})}
         />
         {performanceDataIndex}
       </>

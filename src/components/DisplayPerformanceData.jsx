@@ -25,7 +25,6 @@ class DisplayPerformanceData extends Component {
 
   render () {
     let dataIndex;
-
     if (this.state.performanceData != null) {
       dataIndex = (
         <div>
